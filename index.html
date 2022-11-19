@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Changing Background</title>
+
+</head>
+
+<body>
+    <div class="colors">
+        <span onclick="changeColor('#52006A')" style="--clr:#52006A" class="active" ></span>
+        <span onclick="changeColor('#CD113B')" style="--clr:#CD113B"></span>
+        <span onclick="changeColor('#035AA6')" style="--clr:#035AA6"></span>
+        <span onclick="changeColor('#FF7600')" style="--clr:#FF7600"></span>
+        <span onclick="changeColor('#FFA900')" style="--clr:#FFA900"></span>
+    </div>
+
+    <script>
+        function changeColor(color) {
+            document.body.style.backgroundColor = color;
+            const colorsList = document.querySelectorAll('span');
+            colorsList.forEach((item) => {
+                item.classList.remove('active');
+            })
+            console.log(event.target);
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
